@@ -1,10 +1,20 @@
 :root{
     --borderColor:rgb(67, 67, 67);
+    --fontColorDefault:rgba(35, 35, 35, 0.818);
+    --fontColorFocus:rgb(35, 35, 35);
 }
-
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  div{
+    margin:0;
+    padding: 0; 
+  }
 .categories{
-    width:calc(100% - 20px);
-    margin:10px;
+    width:calc(100% - 23px);//was giving horizontal scroll bar
+    margin:0 10px 10px 10px;
     padding:10px;
     display: grid;
     gap:15px;
@@ -43,7 +53,7 @@
     max-width: 200px;
     height:40%;
     font-family: 'Open Sans';
-    color:rgba(35, 35, 35, 0.818);
+    color:var(--fontColorDefault);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,6 +81,44 @@
 
     .category__innerText{
         background: rgba(255, 255, 255, 0.675);
-        color:rgb(35, 35, 35);
+        color:var(--fontColorFocus);
+    }
+}
+
+@media screen and (max-width:1300px){
+    .category__name{
+       font-size: 26px;
+    }
+    .category__shop{
+        font-size: 22px;
+    }
+}
+@media screen and (max-width:1100px){
+    .category__innerText{
+        width:50%;
+    }
+}
+@media screen and (max-width:900px){
+    ._3{
+        grid-column:  span 6;
+    }
+    ._1 , ._2  {
+        grid-column:  span 3;
+    }
+    ._4 , ._5 {
+        grid-column:  span 3;
+    }
+}
+@media screen and (max-width:600px){
+    .category__name{
+        font-size: 24px;
+    }
+    .category__shop{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:550px){
+    ._1 , ._2 ,._3 , ._4 , ._5  {
+        grid-column:  span 6;
     }
 }

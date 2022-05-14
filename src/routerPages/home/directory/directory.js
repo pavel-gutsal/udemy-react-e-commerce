@@ -8,7 +8,9 @@ const Directory=(props)=>{
         <div className="categories">
             {categories.map(el=>{
                 return(
-                    <Category object={el}/>
+                    <Category object={el}
+                        key={el.id}
+                        />
                     ) 
                 }
             )}

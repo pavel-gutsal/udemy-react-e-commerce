@@ -4,9 +4,7 @@ import {useState , useEffect} from 'react'
 const Category=(props)=>{
     const {object:el} = props
     return(
-        <div className={`category _${el.id}`}
-            key= {el.id}
-            >   
+        <div className={`category _${el.id}`}>   
             <div className="category__img"
                 style={{backgroundImage: `url(${el.imageUrl})`}}
             />

@@ -1,41 +1,31 @@
-import Directory from './components/directory';
 import './App.css';
+import {Routes , Route } from 'react-router-dom';
+import { Fragment } from 'react';
+import Navigation from './routerPages/navigation/navigation'
+import Home from './routerPages/home/home'
+import ContuctUs from './routerPages/contuct/contuctUs';
+import SignIn from './routerPages/SignIn/SignIn';
 
 function App() {
 
-  const categories = [
-    {
-      "id": 1,
-      "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      "id": 2,
-      "title": "jackets",
-      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      "id": 3,
-      "title": "sneakers",
-      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      "id": 4,
-      "title": "womens",
-      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      "id": 5,
-      "title": "mens",
-      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ]
-
   return (
-    <div className="App">
-      <Directory object={categories}/>
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigation/>}>
+        <Route index element={<Home/>}/>
+        <Route path='Contuct' element={<ContuctUs/>}/>
+        <Route path='Sign-In' element={<SignIn/>}/>
+      </Route>
+    </Routes>
   );
 }
 
 export default App;
+
+// return (
+//   <Fragment>
+//     <Navigation/>
+//     <Home/>
+//     <ContuctUs/>
+//   </Fragment>
+  
+// );
